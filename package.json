@@ -1,0 +1,38 @@
+{
+  "name": "guildmate",
+  "version": "1.0.0",
+  "description": "A site where you can plan and post for your guild.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bitbucket.org:Jalsemgeest/guildmate.git"
+  },
+  "keywords": [
+    "guild",
+    "mate",
+    "wow"
+  ],
+  "author": "Jake Alsemgeest",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "flux": "^2.1.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-react": "^3.1.0",
+    "gulp-stylus": "^2.3.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "watchify": "^3.7.0"
+  }
+}
