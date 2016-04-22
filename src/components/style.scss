@@ -1,0 +1,174 @@
+@import "variables";
+
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  background: #f3f3f3;
+  font-weight: 200;
+}
+
+.scribble-container {
+  display: flex;
+  height: 100%;
+}
+
+.nav {
+  flex: 2;
+  border-right: 1px solid #ccc;
+  background: $scrib-gray;
+  height: 100%;
+  color: white;
+  overflow-y: auto;
+
+  .user-profile {
+    display: flex;
+    padding: 10px 15px;
+
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .name-container {
+      flex: 1;
+
+      .name {
+        line-height: 30px;
+        color: white;
+        font-weight: 300;
+        flex: 1;
+      }
+    }
+  }
+
+  .logo-container {
+    padding: 25px 0;
+    border-bottom: 1px solid #475056;
+    background: $scrib-gray-light;
+
+    img {
+      height: 50px;
+    }
+  }
+
+  ul {
+
+    margin: 0;
+    font-weight: 200;
+
+    li {
+      cursor: pointer;
+      color: #e0e0e0;
+      border-bottom: 1px solid #475056;
+      background: $scrib-gray-light;
+
+      div {
+        padding: 7px 0 7px 15px;
+      }
+
+      ul {
+        display: none;
+        font-size: 12px;
+
+        li {
+          padding: 0;
+          border-bottom: none;
+          background: #424b51;
+
+          div {
+            padding: 5px 30px;
+          }
+
+          &:hover {
+            background: #4e5960;
+          }
+        }
+      }
+
+      &.active {
+        background: $scrib-gray-light;
+
+        ul {
+          display: block;
+        }
+
+      }
+    }
+
+    li:hover {
+      background: $scrib-menu-item-hover-color;
+    }
+  }
+}
+
+.content {
+  flex: 10;
+  height: 100%;
+  overflow-y: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .content-container {
+    height: 100%;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-flow: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+label, label > span {
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.overflow-y {
+  overflow-y: auto;
+}
+
+.no-select{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+// headings
+
+.section-heading {
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 1px solid #dddddd;
+  padding: 7px 0;
+}
+
+// end headings
+
+// alerts (bootstrap override)
+.alert {
+  padding: 5px;
+}
+// end alerts

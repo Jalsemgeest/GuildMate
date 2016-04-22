@@ -6,7 +6,10 @@ var Home = React.createClass({
 	render: function() {
 
 		return (
-				<h1>GuildMate</h1>
+				<div className="main_container">
+					<h1>GuildMate</h1>
+					<p>Ready to make an awesome community for your gaming guild/clan?</p>
+				</div>
 			);
 	}
 });

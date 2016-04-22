@@ -13,6 +13,7 @@ var stylus = require('gulp-stylus');
 var plumber = require('gulp-plumber');
 var path = require('path');
 var browserify = require('gulp-browserify');
+var livereload = require('gulp-livereload');
 
 var config = {
 	js:[
@@ -49,8 +50,8 @@ gulp.task('server', function() {
 	}).on('restart', function(){
 		// when the app has restarted, run livereload.
 		gulp.src('./app.js')
-			.pipe(livereload())
-			.pipe(notify('Reloading page, please wait...'));
+			.pipe(notify('Reloading page, please wait...'))
+			.pipe(livereload());
 	})
 });
 
@@ -70,7 +71,8 @@ gulp.task('compile-jsx', function() {
 		    .pipe(browserify({
 			  insertGlobals : true
 			}))
-			.pipe(gulp.dest('js'));
+			.pipe(gulp.dest('js'))
+			.pipe(livereload());
 		}
 	} catch (ex) { }
 	return;
@@ -87,22 +89,21 @@ gulp.task('compile-stylus', function() {
 				}
 			}))
 			.pipe(stylus())
-			.pipe(gulp.dest('./public/css'));
+			.pipe(gulp.dest('./public/css'))
+			.pipe(livereload());
 	} catch (ex) {}
 	return;
 });
 
-gulp.task('react-compile', function() {
+gulp.task('watch-all', function() {
+	livereload.listen();
 	gulp.watch(['./js/components/**/*.jsx',
 	 './js/actions/**/*.js',
 	  './js/constants/**/*.js',
 	  './js/dispatcher/**/*.js',
 	  './js/stores/**/*.js'],
 	   ['compile-jsx']);
-});
-
-gulp.task('stylus-compile', function() {
 	gulp.watch('./css/**/*.styl', ['compile-stylus']);
 });
 
-gulp.task('default', ['server', 'react-compile', 'stylus-compile', 'compile-stylus', 'compile-jsx'])
+gulp.task('default', ['server', 'react-compile', 'stylus-compile', 'watch-all'])
