@@ -7,7 +7,7 @@ function getState() {
 	}
 }
 
-class App extends React.Component {
+class Login extends React.Component {
 
   constructor(props) {
     super(props);
@@ -41,7 +41,16 @@ class App extends React.Component {
             </div>
           </div>
           <ul className="list-unstyled">
-            <li>Login</li>
+            {
+            	this.state.menu.map(function(item, i) {
+            		return <MenuItem 
+            			display={item.display}
+        				route={item.route}
+        				subitems={item.children}
+        				active={item.active}
+        				key={i}/>
+            	})
+            }
           </ul>
         </div>
       </div>
@@ -52,4 +61,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Login;
