@@ -5,32 +5,29 @@ import BaseConstants from '../constants/base-constants'
 
 const _store = {
   menuItems: [{
-    display: 'Dashboard',
-    route:'/dashboard'
-  },{
     display: 'Feed',
     active:false,
-    route:'/dashboard/feed'
+    route:'/feed'
   }, {
     display: 'Forums',
     active:false,
-    route:'/dashboard/forums'
+    route:'/forums'
   }, {
     display: 'Calendar',
     active: false,
-    route:'/dashboard/calendar'
+    route:'/calendar'
   }, {
     display: 'Members',
     active: false,
-    route:'/dashboard/members'
+    route:'/members'
   }, {
     display: 'Teams',
     active:false,
-    route: '/dashboard/teams'
+    route: '/teams'
   }, {
     display: 'Settings',
     active:false,
-    route:'/dashboard/settings'
+    route:'/settings'
   }, {
     display: 'Logout',
     active:false,

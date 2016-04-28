@@ -17,7 +17,7 @@ body {
 .nav {
   flex: 2;
   border-right: 1px solid #ccc;
-  background: $scrib-gray;
+  background: $gm-gray;
   height: 100%;
   color: white;
   overflow-y: auto;
@@ -47,10 +47,16 @@ body {
   .logo-container {
     padding: 25px 0;
     border-bottom: 1px solid #475056;
-    background: $scrib-gray-light;
+    background: $gm-gray-light;
+    height:150px;
 
     img {
-      height: 50px;
+      height: 80px;
+    }
+
+    .guild-name {
+      font-size:20px;
+      padding-top:5px;
     }
   }
 
@@ -63,7 +69,7 @@ body {
       cursor: pointer;
       color: #e0e0e0;
       border-bottom: 1px solid #475056;
-      background: $scrib-gray-light;
+      background: $gm-gray-light;
 
       div {
         padding: 7px 0 7px 15px;
@@ -89,7 +95,7 @@ body {
       }
 
       &.active {
-        background: $scrib-gray-light;
+        background: $gm-gray-light;
 
         ul {
           display: block;
@@ -99,7 +105,7 @@ body {
     }
 
     li:hover {
-      background: $scrib-menu-item-hover-color;
+      background: $gm-menu-item-hover-color;
     }
   }
 }
@@ -172,3 +178,6 @@ strong {
   padding: 5px;
 }
 // end alerts
+
+
+@import "../../node_modules/react-big-calendar/lib/css/react-big-calendar";

@@ -4,7 +4,6 @@
   "description": "A site where you can plan and post for your guild.",
   "main": "app.js",
   "scripts": {
-    "test": "mocha test",
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-dist": "cp ./src/index.html ./dist/ && cp -a ./src/assets/. ./dist/assets/",
     "build": "npm run clean && npm run copy-dist & webpack",
@@ -29,7 +28,9 @@
     "font-awesome-webpack": "0.0.4",
     "jquery": "^2.2.2",
     "js-cookie": "^2.1.1",
+    "moment": "^2.13.0",
     "react": "^0.14.7",
+    "react-big-calendar": "^0.9.11",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.1"
   },

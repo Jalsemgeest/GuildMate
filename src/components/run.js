@@ -16,14 +16,15 @@ import Teams from './teams/teams'
 import Settings from './settings/settings'
 
 function loadSettings() {
-	console.log("Awesome");
+	// console.log("Awesome");
 }
 
 ReactDOM.render(
 	<Router history={browserHistory}>
 		<Route path="/" component={App} onEnter={loadSettings}>
 			<Route path="login" component={Login}/>
-			<Route path="dashboard" component={Dashboard}>
+			<Route path="" component={Dashboard}>
+				<Route path=""/>
 				<Route path="feed" component={Feed}/>
 				<Route path="forums" component={Forums}/>
 				<Route path="calendar" component={Calendar}/>
