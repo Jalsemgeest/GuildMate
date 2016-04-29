@@ -6,11 +6,13 @@ import EventInfo from '../../enums/event-info'
 import moment from 'moment'
 import BigCalendar from 'react-big-calendar'
 import NewEventModal from './new-event-modal'
+import EditEventModal from './edit-event-modal'
 
 function getState() {
   return {
     events: EventStore.getEvents(),
-    newEvent: EventStore.getNewEvent()
+    newEvent: EventStore.getNewEvent(),
+    selectedEvent: EventStore.getSelectedEvent()
   }
 }
 
@@ -39,18 +41,19 @@ class Calendar extends React.Component {
   }
 
   clickEvent(e) {
-    console.log(e.title);    
+    if (this.state.selectedEvent === e) {
+      console.log("DOUBLE CLICKED IT");
+      // EventActions.viewSelectedEvent(e);
+    } else {
+      this.setState({selectedEvent:e});
+    }
   }
 
   selectDate(dateInfo) {
-    console.log(dateInfo.start);
-    console.log(this.state.selectedDate);
     if (this.state.selectedDate === dateInfo.start.toString()) {
-      console.log("IT'S THE SAME");
       EventActions.setNewEventDate(this.state.selectedDate);
       this.setState({isNewEventOpen:true});
     } else {
-      console.log("Setting selected date");
       this.setState({selectedDate: dateInfo.start.toString()});
     }
   }
@@ -60,20 +63,16 @@ class Calendar extends React.Component {
   }
 
   render() {
-    // var newEvents = [
-    //   {
-    //     'title': 'All Day Event',
-    //     'allDay': true,
-    //     'start': new Date(2016, 4, 26),
-    //     'end': new Date(2016, 4, 27)
-    //   }
-    // ]
-    // console.log("EVENTS");
-    // console.log(this.state.events);
     if (this.state.newEvent.start) {
       return  (<NewEventModal
                         date={this.state.newEvent.start.toString()} />
                         );
+    } else if (this.state.selectedEvent.start) {
+      return (<EditEventModal
+                        start={this.state.selectedEvent.start}
+                        end={this.state.selectedEvent.end}
+                        title={this.state.selectedEvent.title}
+                        description={this.state.selectedEvent.description} />);
     }
     return  <BigCalendar
                   selectable

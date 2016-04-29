@@ -21,6 +21,7 @@ const _events = [
 ];
 
 var newEvent = {};
+var selectedEvent = {};
   
 
 class EventStoreClass extends BaseStoreClass {
@@ -29,6 +30,9 @@ class EventStoreClass extends BaseStoreClass {
   }
   getNewEvent() {
   	return newEvent;
+  }
+  getSelectedEvent() {
+  	return selectedEvent;
   }
 }
 
@@ -67,9 +71,20 @@ AppDispatcher.register((payload) => {
     case EventConstants.SET_NEW_EVENT_DATE:
       newEvent.start = new Date(data.date);
       newEvent.end = new Date(newEvent.start);
-      newEvent.title = "This new event!";
+      newEvent.title = "";
       newEvent.allDay = true;
       newEvent.id = 1;
+      EventStore.emitChange();
+      break;
+
+    case EventConstants.SAVE_NEW_EVENT:
+      _events.push(data.event);
+      newEvent = {};
+      EventStore.emitChange();
+      break;
+
+    case EventConstants.VIEW_SELECTED_EVENT:
+      selectedEvent = data.event;
       EventStore.emitChange();
       break;
   }

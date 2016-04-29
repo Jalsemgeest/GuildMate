@@ -21,5 +21,17 @@ export default {
   	AppDispatcher.send(EventConstants.SET_NEW_EVENT_DATE, {
   		date:date
   	});
+  },
+
+  saveEvent(eventInfo) {
+  	AppDispatcher.send(EventConstants.SAVE_NEW_EVENT, {
+  		event:eventInfo
+  	});
+  },
+
+  viewSelectedEvent(eventInfo) {
+  	AppDispatcher.send(EventConstants.VIEW_SELECTED_EVENT, {
+  		event:eventInfo
+  	});
   }
 }
