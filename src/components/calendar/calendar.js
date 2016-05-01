@@ -63,16 +63,14 @@ class Calendar extends React.Component {
   }
 
   render() {
+    console.log(this.state.selectedEvent);
     if (this.state.newEvent.start) {
       return  (<NewEventModal
                         date={this.state.newEvent.start.toString()} />
                         );
     } else if (this.state.selectedEvent.start) {
       return (<EditEventModal
-                        start={this.state.selectedEvent.start}
-                        end={this.state.selectedEvent.end}
-                        title={this.state.selectedEvent.title}
-                        description={this.state.selectedEvent.description} />);
+                        event={this.state.selectedEvent} />);
     }
     return  <BigCalendar
                   selectable

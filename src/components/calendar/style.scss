@@ -1,0 +1,177 @@
+.event {
+	a {
+		text-decoration:none;
+		&:hover {
+			text-decoration:none;
+			cursor:pointer;
+		}
+	}
+	.go_back {
+	  color:$gm-gray;
+	  display:inline-block;
+	  text-align:center;
+	  width:30px;
+	  opacity:0.4;
+	  &:before {
+	    content:"\f0a8";
+	    font-family:"FontAwesome";
+	    font-size:20px;
+	  }
+	  &:hover {
+	    opacity:1;
+	    color:$gm-gray-light;
+	    -ms-transform: scale(1.2);
+	    -webkit-transform: scale(1.2);
+	    transform: scale(1.2);
+	  }
+	}
+
+	input.event_title {
+		width: 300px;
+    text-indent: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 1px solid transparent;
+		
+    &:hover, &:active, &:focus {
+			background-color:$color-white;
+			border:1px solid $gm-gray;
+			outline:0;
+    }
+	}
+
+	.event_description_area {
+		p {
+			margin:0;
+		}
+		input.event_description {
+			width: 100%;
+	    font-size: 14px;
+	    background-color: transparent;
+	    border: 1px solid transparent;
+
+	    &:hover, &:active, &:focus {
+				background-color:$color-white;
+				border:1px solid $gm-gray;
+				outline:0;
+	    }
+		}
+	}
+
+	.event_startdate_area {
+		display:inline-block;
+		p {
+			margin:0;
+		}
+		input.event_startdate {
+			display:block;
+			width:auto;
+			font-size: 14px;
+	    background-color: transparent;
+	    border: 1px solid transparent;
+
+	    &:hover, &:active, &:focus {
+				background-color:$color-white;
+				border:1px solid $gm-gray;
+				outline:0;
+				transition:0.2s linear;
+	    }
+		}
+	}
+
+	.event_allday {
+    display: inline-block;
+    background-color:$color-white;
+    border:1px solid $gm-gray;
+    color:$gm-gray;
+    border-radius:5px;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin:5px;
+
+		&.checked {
+			background-color:$gm-green;
+			color:$color-white;
+		}
+
+		&:hover {
+			background-color:$gm-gray-lighter;
+			transition:0.2s linear;
+		}
+	}
+
+	.event_enddate_area {
+		display:inline-block;
+		p {
+			margin:0;
+		}
+		.event_enddate {
+			display:block;
+			width:auto;
+			font-size: 14px;
+	    background-color: transparent;
+	    border: 1px solid transparent;
+
+	    &:hover, &:active, &:focus {
+				background-color:$color-white;
+				border:1px solid $gm-gray;
+				outline:0;
+	    }
+		}
+	}
+
+	.event_member_list {
+		padding:0;
+		list-style:none;
+
+		li {
+			width:20%;
+			display:inline-block;
+	    height: 30px;
+    	line-height: 30px;
+    	border:1px solid $gm-gray;
+    	border-left:0px;
+
+    	&:nth-child(6), &:first-child {
+    		border-left:1px solid $gm-gray;
+    	}
+    	&:nth-child(n+6) {
+				border-top:0px;
+    	}
+
+    	a {
+    		padding-left:10px;
+    		display:block;
+    		color:$gm-gray;
+    		&:hover {
+    			background-color:$gm-gray;
+    			color:$color-white;
+    			cursor:pointer;
+    			transition:0.2s linear;
+    			box-shadow: 0px 2px 2px $gm-gray;
+    		}
+    	}
+		}
+	}
+
+	.save_event {
+		display: block;
+    background-color:$color-white;
+    border:1px solid $gm-gray;
+    color:$gm-gray;
+    border-radius:5px;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin:5px 0px;
+
+    &:hover {
+    	background-color:$gm-green;
+    	color:$color-white;
+    	transition:0.2s linear;
+    }
+	}
+}

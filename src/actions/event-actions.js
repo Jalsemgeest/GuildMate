@@ -29,6 +29,12 @@ export default {
   	});
   },
 
+  saveExistingEvent(eventInfo) {
+  	AppDispatcher.send(EventConstants.SAVE_EXISTING_EVENT, {
+  		event:eventInfo
+  	});
+  },
+
   viewSelectedEvent(eventInfo) {
   	AppDispatcher.send(EventConstants.VIEW_SELECTED_EVENT, {
   		event:eventInfo
